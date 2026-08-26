@@ -30,19 +30,14 @@ function iniciarSesion() {
     let usuario = document.getElementById("usuario").value;
     let contrasena = document.getElementById("contrasena").value;
 
-    let usuarioGuardado = localStorage.getItem("usuario");
-    let contrasenaGuardada = localStorage.getItem("contrasena");
+    if (usuario != "" && contrasena != "") {
 
-    let mensaje = document.getElementById("mensaje");
-
-    if (usuario == usuarioGuardado &&
-        contrasena == contrasenaGuardada) {
-
-        location.href = "pagina.html";
+        window.location.href = "pagina-principal-red-social.html";
 
     } else {
 
-        mensaje.textContent = "Usuario o contraseña incorrectos";
-        mensaje.style.color = "red";
+        document.getElementById("mensaje").innerHTML =
+            "Ingresa tu usuario y contraseña";
+
     }
 }
